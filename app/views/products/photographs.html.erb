@@ -1,0 +1,9 @@
+<h1>Vivienne Gold Photography</h1>
+
+<% @products.each do |product| %>
+<h2>Photo: <%= product.name %></h2>
+<h2>Price: <%= product.price %></h2>
+<img src= <%= product.image %>
+<h2>Description <%= product.description %></h2>
+
+<% end %> 
