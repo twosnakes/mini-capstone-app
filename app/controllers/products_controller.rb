@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
   def show
     product_id = params[:id]
     @product = Product.find_by(id: product_id)
+
+    @name = @product.name
   end
 
   def new
@@ -20,6 +22,8 @@ class ProductsController < ApplicationController
       image: params[:img]
       )
     product.save
+     flash[:success] = "Product Successfully Created"
+     redirect_to "/products/#{ product.id }"
   end
 
   def edit
@@ -35,5 +39,15 @@ class ProductsController < ApplicationController
       image: params[:img]
       )
     product.save
+    flash[:success] = "Product Successfully Updated"
+    redirect_to "/products/#{ product.id }"
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    flash[:success] = "Product Successfully Deleted"
+    redirect_to '/'
+
   end
 end
