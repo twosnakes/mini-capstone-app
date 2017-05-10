@@ -1,12 +1,15 @@
 <h1>Vivienne Gold Photography</h1>
 
-<% @products.each do |product| %>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-4">
+        <div class="thumbnail well">
 
-<h1><a href="/products/<%= product.id %>"> <%= product.name %></a></h1>
-<h4><%= product.description %></h4>
-<h3><%= product.price %></h3>
-<img src="<%= product.image %>">
-
-
-
-<% end %>
+        <h1><a href="/products/<%= product.id %>"> <%= product.name %></a></h1>
+        <h4><%= product.description %></h4>
+        <h3><%= product.price %></h3>
+        <img src="<%= product.image %>">
+      </div>
+    </div>
+  <% end %>
+</div>

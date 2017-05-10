@@ -4,7 +4,7 @@
 <h4><%= @product.description %></h4>
 <h3><%= @product.price %></h3>
 <img src= <%= @product.image %>>
-
+<h5>Last Updated On: <%= @product.friendly_updated_at %></h5>
 <a href="/products/<%= @product.id %>/edit">Edit Product</a>
 
 <%= link_to "Delete", "/products/#{ @product.id}", method: :delete %>
