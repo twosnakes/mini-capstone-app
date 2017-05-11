@@ -9,7 +9,22 @@ class Product < ApplicationRecord
   end
 
   def sale_message
-    if price < $250
-      "" 
-    else "Regularly Priced"
+    if discounted? 
+      "Sale Photograph" 
+    else 
+      "Regularly Priced"
+    end
+
+    def discounted?
+     price < 250
+    end
+
+    def tax
+      price * 0.99
+    end
+
+    def total
+      prict + tax
+    end
+  end
 end
