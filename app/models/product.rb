@@ -15,8 +15,10 @@ class Product < ApplicationRecord
       "Regularly Priced"
     end
 
+    
+
     def discounted?
-     price < 250
+     price < 200.00
     end
 
     def tax
