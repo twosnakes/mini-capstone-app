@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
 
   def friendly_updated_at
     updated_at.strftime("%m/%d/%Y")
@@ -14,7 +15,7 @@ class Product < ApplicationRecord
     else 
       "Regularly Priced"
     end
-
+  end
     
 
     def discounted?
@@ -26,7 +27,7 @@ class Product < ApplicationRecord
     end
 
     def total
-      prict + tax
+      price + tax
     end
-  end
 end
+

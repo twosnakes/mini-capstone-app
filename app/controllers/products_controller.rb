@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
     @products = Product.all
     sort_attributes = params[:sort]
     sort_order = params[:sort_order]
-    discount= params[:discount]
-    search_term= params[:search_term]
+    discount = params[:discount]
+    search_term = params[:search_term]
 
     if search_term
       @products = Product.where(
@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.all.sample
+    product_id = params[:id]
     @product = Product.find_by(id: product_id)
   end
 
