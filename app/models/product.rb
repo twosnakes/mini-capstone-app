@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :supplier
   has_many :images
+  has_many :orders
 
   def first_image_url
     image_collection = images
@@ -33,7 +34,7 @@ class Product < ApplicationRecord
     end
 
     def tax
-      price * 0.99
+      price * 0.09
     end
 
     def total

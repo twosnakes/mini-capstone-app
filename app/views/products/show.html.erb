@@ -15,3 +15,20 @@
 <a href="/products/<%= @product.id %>/edit">Edit Product</a>
 
 <%= link_to "Delete", "/products/#{ @product.id }", method: :delete %>
+
+
+
+<%= form_tag "/orders", method: :post do %>
+<h1> Sign Up </h1>
+
+<div>
+  <%= label_tag :quantity %>
+  <%= text_field_tag :quantity %>
+  <%= label_tag :product_id %>
+  <%= text_field_tag :product_id %>
+</div>
+
+<div>
+<%= submit_tag "Buy Now" %>
+<% end %>
+

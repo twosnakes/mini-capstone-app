@@ -1,4 +1,4 @@
-rails # This file should contain all the record creation needed to seed the database with its default values.
+# rails # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -23,10 +23,5 @@ rails # This file should contain all the record creation needed to seed the data
   # product.save
 
   # Image.create!(url: "http://3.bp.blogspot.com/-13P1t4UYUjA/WPZiWg3AsUI/AAAAAAAAGME/pZJ9KLsUHecm36ifpvZsWwgoPnBCZCkugCK4B/s1600/La%2BHabana.jpg", product_id: 2 )
-  Image.create!(url: "http://2.bp.blogspot.com/-MTpdNfF7v-4/WPMEmKcgOyI/AAAAAAAAGIA/AhGxAvstzw80tinK5a6q_RBa9dtyfaDBQCK4B/s1600/Husky%2BIn%2BThe%2BWindow.jpg", product_id: 6 )
-  Image.create!(url: "http://4.bp.blogspot.com/-KBGlML58too/WPMGZekRdgI/AAAAAAAAGIk/zp71ZRMTxrAGJG9v0aNzjYWAk1YJaWrIQCK4B/s1600/Sass.jpg", product_id: 7 )
-  Image.create!(url: "http://4.bp.blogspot.com/-skbByjZTk-I/WPMF73m_rLI/AAAAAAAAGIc/41SwI3Sq_4oEJcDbs5NepMbhzt_Zuc-6wCK4B/s1600/Rollerbladers.jpg", product_id: 8 )
-  Image.create!(url: "http://1.bp.blogspot.com/-Ix_NFvs4n5Q/WPMGuOwTuLI/AAAAAAAAGIs/uoJxJLyqjTsvslvT0rX7FgedfQkoC25lwCK4B/s1600/Schoolgirl.jpg", product_id: 9 )
-  Image.create!(url: "http://4.bp.blogspot.com/-l49E3dG9qno/WPMSuQhxvfI/AAAAAAAAGKU/oZW0Vij292EYrubV-QnPlbILzlihSLMAgCK4B/s1600/Arcs.jpg", product_id: 5 )
-  Image.create!(url: "http://1.bp.blogspot.com/-AOErcmRKKKg/WPMD50fgp3I/AAAAAAAAGHs/QHlvsOWbvQgsPt1qPQnfHnPbgywPS_wuQCK4B/s1600/Fishing%2BBoys.jpg" product_id: 4)
+ #
   
