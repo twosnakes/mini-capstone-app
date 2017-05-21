@@ -1,16 +1,16 @@
 class Order < ApplicationRecord
   belongs_to :product, optional: true
-  belongs_to :user
+  belongs_to :user, optional: true
 
   def subtotal
-    product.price * quantity
+    self.subtotal = product.price * quantity
   end
 
   def tax
-    subtotal * 0.09
+    self.tax = subtotal * 0.09
   end
 
   def total
-    subtotal + tax
+    self.total = subtotal + tax
   end
 end

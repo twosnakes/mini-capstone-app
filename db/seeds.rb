@@ -24,4 +24,19 @@
 
   # Image.create!(url: "http://3.bp.blogspot.com/-13P1t4UYUjA/WPZiWg3AsUI/AAAAAAAAGME/pZJ9KLsUHecm36ifpvZsWwgoPnBCZCkugCK4B/s1600/La%2BHabana.jpg", product_id: 2 )
  #
+
+ #1 - expensive
+ #2 - wearable
+ #3 - game
+
+ CategoryProduct.create!([
+                        {category_id: 1, product_id: 2},
+                        {category_id: 1, product_id: 4},
+                        {category_id: 1, product_id: 7},
+                        {category_id: 2, product_id: 9},
+                        {category_id: 2, product_id: 5},
+                        {category_id: 2, product_id: 6},
+                        {category_id: 3, product_id: 9},
+                        {category_id: 3, product_id: 7},
+                        ])
   

@@ -1,0 +1,20 @@
+
+
+
+<h1>Thank You For Your Order <%= @order.user.email %> !</h1>
+
+<img src= <%= @order.product.first_image_url %>>
+
+<h2>Your Product Id Is: <%= @order.product_id %></h2>
+<h2>Price: <%= number_to_currency@order.product.price %></h2>
+<h2>Your Order Id Is: <%= @order.id %></h2>
+<h2>The Quantity Of Your Order Is: <%= @order.quantity  %></h2>
+<h2>The Name of the Product You Purchased is: <%= @order.product.name %></h2>
+<h2>Your Subtotal Is: <%= number_to_currency@order.subtotal %></h2>
+<h2>Your Tax Is: <%= number_to_currency@order.tax %></h2>
+<h2>Your Total Is: <%= number_to_currency@order.total %></h2>
+
+
+
+
+
