@@ -17,26 +17,34 @@
   # product.save
   #  product = Product.new(name: "Sass", price: 300, image: "http://4.bp.blogspot.com/-KBGlML58too/WPMGZekRdgI/AAAAAAAAGIk/zp71ZRMTxrAGJG9v0aNzjYWAk1YJaWrIQCK4B/s1600/Sass.jpg", description: "Black and white photo of women walking in Havana, Cuba")
   # product.save
-  # product = Product.new(name: "Rollerbladers", price: 300, image: "http://4.bp.blogspot.com/-skbByjZTk-I/WPMF73m_rLI/AAAAAAAAGIc/41SwI3Sq_4oEJcDbs5NepMbhzt_Zuc-6wCK4B/s1600/Rollerbladers.jpg", description: "Black and white photo of rollerbladers in Havana, Cuba")
-  # product.save
+   # product = Product.new(name: "Rollerbladers", price: 300, description: "Black and white photo of rollerbladers in Havana, Cuba", supplier_id: 3)
+   # product.save
   # product = Product.new(name: "After School Girl", price: 300, image: "http://1.bp.blogspot.com/-Ix_NFvs4n5Q/WPMGuOwTuLI/AAAAAAAAGIs/uoJxJLyqjTsvslvT0rX7FgedfQkoC25lwCK4B/s1600/Schoolgirl.jpg", description: "Black and white photo of girl after school in Havana, Cuba")
   # product.save
 
-  # Image.create!(url: "http://3.bp.blogspot.com/-13P1t4UYUjA/WPZiWg3AsUI/AAAAAAAAGME/pZJ9KLsUHecm36ifpvZsWwgoPnBCZCkugCK4B/s1600/La%2BHabana.jpg", product_id: 2 )
+   # Image.create!(url: "http://3.bp.blogspot.com/-13P1t4UYUjA/WPZiWg3AsUI/AAAAAAAAGME/pZJ9KLsUHecm36ifpvZsWwgoPnBCZCkugCK4B/s1600/La%2BHabana.jpg", product_id: 2 )
  #
 
- #1 - expensive
- #2 - wearable
- #3 - game
+  # Image.create!(url: "http://4.bp.blogspot.com/-skbByjZTk-I/WPMF73m_rLI/AAAAAAAAGIc/41SwI3Sq_4oEJcDbs5NepMbhzt_Zuc-6wCK4B/s1600/Rollerbladers.jpg", product_id: 12)
+ #
 
- CategoryProduct.create!([
-                        {category_id: 1, product_id: 2},
-                        {category_id: 1, product_id: 4},
-                        {category_id: 1, product_id: 7},
-                        {category_id: 2, product_id: 9},
-                        {category_id: 2, product_id: 5},
-                        {category_id: 2, product_id: 6},
-                        {category_id: 3, product_id: 9},
-                        {category_id: 3, product_id: 7},
-                        ])
+ #4 - expensive
+ #5 - black and white
+ #6 - gift price
+
+ #<Category id: 4, name: "expensive", created_at: "2017-05-22 23:50:09", updated_at: "2017-05-22 23:50:09">, #<Category id: 5, name: "black and white", created_at: "2017-05-22 23:50:55", updated_at: "2017-05-22 23:50:55">, #<Category id: 6, name: "gift price", created_at: "2017-05-22 23:51:51", updated_at: "2017-05-22 23:51:51">]>
+
+ # CategoryProduct.create!([
+ #                        {category_id: 4, product_id: 7},
+ #                        {category_id: 4, product_id: 8},
+ #                        {category_id: 4, product_id: 4},
+ #                        {category_id: 5, product_id: 9},
+ #                        {category_id: 5, product_id: 4},
+ #                        {category_id: 5, product_id: 2},
+ #                        {category_id: 5, product_id: 6},
+ #                        {category_id: 6, product_id: 4},
+ #                        {category_id: 6, product_id: 6}
+ #                        ])
+
+
   

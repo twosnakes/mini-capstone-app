@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    order_quantity = params[:quantity]
-    order_subtotal = params[:price]
+     order_quantity = params[:quantity]
+     order_subtotal = params[:price]
   end
 end

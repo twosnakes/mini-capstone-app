@@ -15,6 +15,11 @@ class Product < ApplicationRecord
     end
   end
 
+  def stringify_categories
+   categories.map { |category| category.name.titleize }.join(", ") 
+  end
+  
+
   def friendly_updated_at
     updated_at.strftime("%m/%d/%Y")
   end

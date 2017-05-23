@@ -13,23 +13,39 @@
 <h5>Last Updated On: <%= @product.friendly_updated_at %></h5>
 <h5><%= @product.supplier.name %></h5>
 <a href="/products/<%= @product.id %>/edit">Edit Product</a>
-
 <%= link_to "Delete", "/products/#{ @product.id }", method: :delete %>
+<h2> Categories: <%= @product.stringify_categories %>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <%= form_tag "/orders", method: :post do %>
-<h1> Sign Up </h1>
 
-
- 
-  <%= text_field_tag :quantity,  nil, placeholder: "Quantity" %>
-  <%= label_tag :product_id %>
-  <%= hidden_field_tag :product_id, @product.id %>
 
 <div>
-<%= submit_tag "Buy Now", class "btn btn-primary" %>
+ 
+  <%= text_field_tag :quantity,  nil, placeholder: "Quantity" %>
+ 
+  <%= hidden_field_tag :product_id, @product.id %>
+
+
 </div>
+
+<%= submit_tag "Buy Now", class: "btn btn-warning" %>
+
+
 
 <% end %>
 
