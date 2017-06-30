@@ -1,5 +1,12 @@
 class ProductsController < ApplicationController
+
+  before_action :authenticate_admin!, except: [:index, :show, :random]
+
+
   def index
+    # @cart_count = current_user.cart.count 
+
+    
     @products = Product.all
     sort_attributes = params[:sort]
     sort_order = params[:sort_order]
@@ -31,19 +38,24 @@ class ProductsController < ApplicationController
   end
 
   def new
-
+   @product = Product.new
   end
 
   def create
-    product = Product.new(
+  
+
+    @product = Product.new(
       name: params[:name],
       description: params[:description],
-      price: params[:price],
-      image: params[:img]
+      price: params[:price]
       )
-    product.save
+   if @product.save
      flash[:success] = "Product Successfully Created"
      redirect_to "/products/#{ product.id }"
+   else
+    
+      render 'new.html.erb'
+    end
   end
 
   def edit
@@ -55,8 +67,7 @@ class ProductsController < ApplicationController
     product.assign_attributes(
       name: params[:name],
       description: params[:description],
-      price: params[:price],
-      image: params[:img]
+      price: params[:price]
       )
     product.save
     flash[:success] = "Product Successfully Updated"

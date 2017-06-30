@@ -1,38 +1,48 @@
 class CartedProductsController < ApplicationController
+  
 
-  def new
-    
+  def index
+   
+    if current_user && current_user.cart.any?
+      @carted_products = current_user.cart
+    else
+      flash[:warning] = "Please add something to your cart."
+      redirect_to '/'
+    end
   end
+
 
   def create
 
 
-    carted_products = CartedProduct.new(
+    carted_product = CartedProduct.new(
                       product_id: params[:product_id],
                       user_id: current_user.id,
                       quantity: params[:quantity],
-                      status: "Carted"
+                      status: "carted"
                       )
+
+
+  
+
+    # p current_user.id
     
-    if carted_products.save
-      # session[:user_id] = user.id
+    carted_product.save
+     flash[:success] = "Item added to cart"
       redirect_to "/carted_products"
-    end
+  end
+  
+
+  def destroy
+
+    carted_products = CartedProduct.find(params[:id])
+    carted_products.update(status: "removed")
+    flash[:success] = "Item removed from cart"
+    redirect_to "/carted_products"
+
   end
 
-  # def show
-  #    @carted_product = CartedProduct.find(params[:id])
-  #    user_id = current_user.id
-  #    status = "Carted"
-  # end
 
-  def index
-    # @carted_products = CartedProduct.all
-                   @carted_products = CartedProduct.where(
-                               status: "carted",
-                               user_id: current_user.id
-                               )
-    end
                      
  
 

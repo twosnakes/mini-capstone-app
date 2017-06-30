@@ -5,16 +5,21 @@
 <h4><%= @product.description %></h4>
 <h3><%= @product.price %></h3>
 <p>Price: <%= number_to_currency(@product.price) %></p>
-<p class=" <%= "red-price" if @product.discounted? %>">Price: <%= number_to_currency(@product.price) %></p>
+<p class=" <%= 'red-price' if @product.discounted? %>">Price: <%= number_to_currency(@product.price) %></p>
 <p>Tax <%= number_to_currency(@product.tax) %></p>
 <h3><%= @product.sale_message %></h3>
 <h3><%= @product.supplier.name %></h3>
 <img src= <%= @product.first_image_url %>>
 <h5>Last Updated On: <%= @product.friendly_updated_at %></h5>
 <h5><%= @product.supplier.name %></h5>
+
+<% if admin_signed_in? %>
+
 <a href="/products/<%= @product.id %>/edit">Edit Product</a>
 <%= link_to "Delete", "/products/#{ @product.id }", method: :delete %>
 <h2> Categories: <%= @product.stringify_categories %>
+
+<% end %>
 
 
 
@@ -46,6 +51,4 @@
 <%= submit_tag "Add To Cart", class: "btn btn-warning" %>
 
 
-
 <% end %>
-

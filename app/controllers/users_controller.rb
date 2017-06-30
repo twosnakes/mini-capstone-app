@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     if user.save
       session[:user_id] = user.id
-      flash[:success] = "You're One The Money"
+      flash[:success] = "You're On The Money"
       redirect_to '/'
     else
       flash[:warning] = "Dumdum that's not it"
