@@ -1,50 +1,51 @@
-# rails # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-   product = Product.new(name: "Epic", price: 300, image: "http://2.bp.blogspot.com/-m6IV1Pp4xCw/WPMRmPqI08I/AAAAAAAAGKA/kyF7pG6r6nkEGDaZhJDPtlbUgsA3IqVrACK4B/s1600/Epic.jpg", description: "Black and white photo of two girls in Havana, Cuba")
-   product.save
-   product = Product.new(name: "La Habana", price: 300, image: "http://3.bp.blogspot.com/-13P1t4UYUjA/WPZiWg3AsUI/AAAAAAAAGME/pZJ9KLsUHecm36ifpvZsWwgoPnBCZCkugCK4B/s1600/La%2BHabana.jpg", description: "Black and white street in Havana, Cuba")
-   product.save
-   product = Product.new(name: "Collecting Garbage", price: 300, image: "http://2.bp.blogspot.com/-AVIlyO_dRuE/WPMFjg6SnMI/AAAAAAAAGIU/5PE-OQNwXskOXp-EhAZGFKYJ0b3ukKi3gCK4B/s1600/Ras.jpg", description: "Black and white photo of men collecting garbage in Havana, Cuba")
-   product.save
-   product = Product.new(name: "Cousins", price: 300, image: "http://1.bp.blogspot.com/-AOErcmRKKKg/WPMD50fgp3I/AAAAAAAAGHs/QHlvsOWbvQgsPt1qPQnfHnPbgywPS_wuQCK4B/s1600/Fishing%2BBoys.jpg", description: "Black and white photo of cousins in Havana, Cuba")
-   product.save
-   product = Product.new(name: "Arcs", price: 300, image: "http://4.bp.blogspot.com/-l49E3dG9qno/WPMSuQhxvfI/AAAAAAAAGKU/oZW0Vij292EYrubV-QnPlbILzlihSLMAgCK4B/s1600/Arcs.jpg", description: "Black and white photo of arcs in Havana, Cuba")
-  product.save
-   product = Product.new(name: "Husky In The Window", price: 300, image: "http://2.bp.blogspot.com/-MTpdNfF7v-4/WPMEmKcgOyI/AAAAAAAAGIA/AhGxAvstzw80tinK5a6q_RBa9dtyfaDBQCK4B/s1600/Husky%2BIn%2BThe%2BWindow.jpg", description: "Black and white photo of Husky in Havana, Cuba")
-   product.save
-   product = Product.new(name: "Sass", price: 300, image: "http://4.bp.blogspot.com/-KBGlML58too/WPMGZekRdgI/AAAAAAAAGIk/zp71ZRMTxrAGJG9v0aNzjYWAk1YJaWrIQCK4B/s1600/Sass.jpg", description: "Black and white photo of women walking in Havana, Cuba")
-   product.save
-   product = Product.new(name: "Rollerbladers", price: 300, description: "Black and white photo of rollerbladers in Havana, Cuba", supplier_id: 3)
-   product.save
-   product = Product.new(name: "After School Girl", price: 300, image: "http://1.bp.blogspot.com/-Ix_NFvs4n5Q/WPMGuOwTuLI/AAAAAAAAGIs/uoJxJLyqjTsvslvT0rX7FgedfQkoC25lwCK4B/s1600/Schoolgirl.jpg", description: "Black and white photo of girl after school in Havana, Cuba")
-   product.save
+Supplier.create!([
+  {name: "Athena Hera", email: "Ahera@gmail.com", phone: "773-981-5267"},
+  {name: "Jasper Stone", email: "Jstone@gmail.com", phone: "345-678-9876"},
+  {name: "Sampson Longhair", email: "slonghair@gmail.com", phone: "234-765-0765"}
+])
+User.create!([
+  {name: "Daisy Flowers", email: "dflowers@gmail.com", password_digest: "$2a$10$PZEOPexqx9CZMD72eK1CXeLVPE1DjnqEwcbfit0d4MWjvS8p6kT/m", admin: false},
+  {name: "Daisy Flowers", email: "dflowers@gmail.com", password_digest: "$2a$10$m/i3QhuHiDF4VI6v0f948.kBnBG2PrygyO0vnc5sTwc1LLLVMhSAO", admin: false},
+  {name: "Bruce Lee", email: "Blee@gmail.com", password_digest: "$2a$10$UnZ.RSPOosAbxZZkDHnoA.OLFXaOnpfH7akJdJ0O.1cL2DGumE6xK", admin: false},
+  {name: "Damian Dollars", email: "ddollars@gmail.com", password_digest: "$2a$10$zHlXr/6pFZOzZhElUCoCoegbAj5qkq869CbDN519HwW.bMGItDc.O", admin: true},
+  {name: "nan South", email: "nsouth@gmail.com", password_digest: "$2a$10$Uzgh9opRKCbSfAkKNOxMCOqhFfcAiC1MmqoT.Fsu3GL7C906ckws2", admin: false}
+])
 
-    Image.create!(url: "http://3.bp.blogspot.com/-13P1t4UYUjA/WPZiWg3AsUI/AAAAAAAAGME/pZJ9KLsUHecm36ifpvZsWwgoPnBCZCkugCK4B/s1600/La%2BHabana.jpg", product_id: 2 )
- 
+Category.create!([
+  {name: "expensive"},
+  {name: "black and white"},
+  {name: "gift price"}
+])
+CategoryProduct.create!([
+  {category_id: 4, product_id: 7},
+  {category_id: 4, product_id: 8},
+  {category_id: 4, product_id: 4},
+  {category_id: 5, product_id: 9},
+  {category_id: 5, product_id: 4},
+  {category_id: 5, product_id: 2},
+  {category_id: 5, product_id: 6},
+  {category_id: 6, product_id: 4},
+  {category_id: 6, product_id: 6}
+])
+Image.create!([
+  {url: "http://3.bp.blogspot.com/-13P1t4UYUjA/WPZiWg3AsUI/AAAAAAAAGME/pZJ9KLsUHecm36ifpvZsWwgoPnBCZCkugCK4B/s1600/La%2BHabana.jpg", product_id: 2},
+  {url: "http://2.bp.blogspot.com/-MTpdNfF7v-4/WPMEmKcgOyI/AAAAAAAAGIA/AhGxAvstzw80tinK5a6q_RBa9dtyfaDBQCK4B/s1600/Husky%2BIn%2BThe%2BWindow.jpg", product_id: 6},
+  {url: "http://4.bp.blogspot.com/-KBGlML58too/WPMGZekRdgI/AAAAAAAAGIk/zp71ZRMTxrAGJG9v0aNzjYWAk1YJaWrIQCK4B/s1600/Sass.jpg", product_id: 7},
+  {url: "http://4.bp.blogspot.com/-skbByjZTk-I/WPMF73m_rLI/AAAAAAAAGIc/41SwI3Sq_4oEJcDbs5NepMbhzt_Zuc-6wCK4B/s1600/Rollerbladers.jpg", product_id: 8},
+  {url: "http://1.bp.blogspot.com/-Ix_NFvs4n5Q/WPMGuOwTuLI/AAAAAAAAGIs/uoJxJLyqjTsvslvT0rX7FgedfQkoC25lwCK4B/s1600/Schoolgirl.jpg", product_id: 9},
+  {url: "http://4.bp.blogspot.com/-l49E3dG9qno/WPMSuQhxvfI/AAAAAAAAGKU/oZW0Vij292EYrubV-QnPlbILzlihSLMAgCK4B/s1600/Arcs.jpg", product_id: 5},
+  {url: "http://1.bp.blogspot.com/-AOErcmRKKKg/WPMD50fgp3I/AAAAAAAAGHs/QHlvsOWbvQgsPt1qPQnfHnPbgywPS_wuQCK4B/s1600/Fishing%2BBoys.jpg", product_id: 4},
+  {url: "http://4.bp.blogspot.com/-skbByjZTk-I/WPMF73m_rLI/AAAAAAAAGIc/41SwI3Sq_4oEJcDbs5NepMbhzt_Zuc-6wCK4B/s1600/Rollerbladers.jpg", product_id: 12}
+])
 
-   Image.create!(url: "http://4.bp.blogspot.com/-skbByjZTk-I/WPMF73m_rLI/AAAAAAAAGIc/41SwI3Sq_4oEJcDbs5NepMbhzt_Zuc-6wCK4B/s1600/Rollerbladers.jpg", product_id: 12)
- 
-
- #4 - expensive
- #5 - black and white
- #6 - gift price
-
- #<Category id: 4, name: "expensive", created_at: "2017-05-22 23:50:09", updated_at: "2017-05-22 23:50:09">, #<Category id: 5, name: "black and white", created_at: "2017-05-22 23:50:55", updated_at: "2017-05-22 23:50:55">, #<Category id: 6, name: "gift price", created_at: "2017-05-22 23:51:51", updated_at: "2017-05-22 23:51:51">]>
-
- # CategoryProduct.create!([
- #                        {category_id: 4, product_id: 7},
- #                        {category_id: 4, product_id: 8},
- #                        {category_id: 4, product_id: 4},
- #                        {category_id: 5, product_id: 9},
- #                        {category_id: 5, product_id: 4},
- #                        {category_id: 5, product_id: 2},
- #                        {category_id: 5, product_id: 6},
- #                        {category_id: 6, product_id: 4},
- #                        {category_id: 6, product_id: 6}
- #                        ])
-
-
-  
+Product.create!([
+  {name: "Arcs", price: 300, description: "Black and white photo of arcs in Havana, Cuba", supplier_id: 3},
+  {name: "Sass", price: 300, description: "Black and white photo of women walking in Havana, Cuba", supplier_id: 1},
+  {name: "After School Girl", price: 300, description: "Black and white photo of girl after school in Havana, Cuba", supplier_id: 3},
+  {name: nil, price: nil, description: nil, supplier_id: 3},
+  {name: nil, price: nil, description: nil, supplier_id: 2},
+  {name: "La Habana", price: 250, description: "Black and white street in Havana, Cuba", supplier_id: 2},
+  {name: "Husky In The Window", price: 180, description: "Black and white photo of Husky in Havana, Cuba", supplier_id: 2},
+  {name: "Cousins", price: 290, description: "Black and white photo of cousins in Havana, Cuba", supplier_id: 3},
+  {name: "Rollerbladers", price: 300, description: "Black and white photo of rollerbladers in Havana, Cuba", supplier_id: 3}
+])
