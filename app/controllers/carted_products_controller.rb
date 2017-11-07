@@ -41,10 +41,4 @@ class CartedProductsController < ApplicationController
     redirect_to "/carted_products"
 
   end
-
-
-                     
- 
-
- 
 end

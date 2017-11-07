@@ -2,11 +2,7 @@ class ProductsController < ApplicationController
 
   before_action :authenticate_admin!, except: [:index, :show, :random]
 
-
   def index
-    # @cart_count = current_user.cart.count 
-
-    
     @products = Product.all
     sort_attributes = params[:sort]
     sort_order = params[:sort_order]
@@ -42,9 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-  
-
-    @product = Product.new(
+      @product = Product.new(
       name: params[:name],
       description: params[:description],
       price: params[:price]
